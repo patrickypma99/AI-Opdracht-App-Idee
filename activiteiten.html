@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Activiteiten - Question</title>
+
+    <link rel="stylesheet" href="activiteiten.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            Question
+        </div>
+
+        <div class="location">
+            📍 Eindhoven
+        </div>
+
+    </header>
+
+
+
+    <!-- MAIN -->
+
+    <main>
+
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <p class="eyebrow">
+                SOCIAL DISCOVERY
+            </p>
+
+            <h1>
+                Wat wil je<br>
+                <span>samen doen?</span>
+            </h1>
+
+            <p class="intro-text">
+                Ontdek activiteiten in Eindhoven
+                en vind iets leuks om samen te doen.
+            </p>
+
+        </section>
+
+
+
+        <!-- SEARCH -->
+
+        <section class="search-section">
+
+            <div class="search-box">
+
+                🔎
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Zoek een activiteit..."
+                    oninput="filterActivities()"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CATEGORIES -->
+
+        <section class="categories">
+
+            <button
+                class="category active"
+                onclick="filterCategory('alle', this)"
+            >
+                ✨ Alles
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('koffie', this)"
+            >
+                ☕ Koffie
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('bowling', this)"
+            >
+                🎳 Bowling
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('film', this)"
+            >
+                🎬 Film
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('sport', this)"
+            >
+                ⚽ Sport
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('gaming', this)"
+            >
+                🎮 Gaming
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('cultuur', this)"
+            >
+                🎨 Cultuur
+            </button>
+
+            <button
+                class="category"
+                onclick="filterCategory('evenement', this)"
+            >
+                🎉 Evenementen
+            </button>
+
+        </section>
+
+
+
+        <!-- ACTIVITIES -->
+
+        <section>
+
+            <div class="section-heading">
+
+                <div>
+
+                    <p class="small-label">
+                        EINDHOVEN
+                    </p>
+
+                    <h2>
+                        Ontdek iets nieuws
+                    </h2>
+
+                </div>
+
+                <span id="resultCount">
+                    8 activiteiten
+                </span>
+
+            </div>
+
+
+
+            <div
+                class="activities"
+                id="activitiesContainer"
+            >
+
+
+                <!-- ACTIVITEIT 1 -->
+
+                <article
+                    class="activity-card"
+                    data-category="koffie"
+                    data-name="lucifer coffee roasters koffie"
+                >
+
+                    <div class="activity-image coffee">
+                        ☕
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                ☕ KOFFIE
+                            </span>
+
+                            <span class="distance">
+                                Eindhoven
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Lucifer Coffee Roasters
+                        </h3>
+
+                        <p>
+                            Een gezellige koffiebar aan de
+                            Kleine Berg. Een rustige plek om
+                            iemand voor het eerst te ontmoeten.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                ⭐ 4.4
+                            </span>
+
+                            <button onclick="viewActivity('Lucifer Coffee Roasters')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 2 -->
+
+                <article
+                    class="activity-card"
+                    data-category="koffie"
+                    data-name="denf coffee koffie"
+                >
+
+                    <div class="activity-image coffee">
+                        ☕
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                ☕ KOFFIE
+                            </span>
+
+                            <span class="distance">
+                                Centrum
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            DENF Coffee
+                        </h3>
+
+                        <p>
+                            Specialty coffee en een fijne plek
+                            om rustig met iemand te praten.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                ⭐ 4.4
+                            </span>
+
+                            <button onclick="viewActivity('DENF Coffee')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 3 -->
+
+                <article
+                    class="activity-card"
+                    data-category="bowling"
+                    data-name="vier hoog bowling"
+                >
+
+                    <div class="activity-image bowling">
+                        🎳
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                🎳 BOWLING
+                            </span>
+
+                            <span class="distance">
+                                Eindhoven
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Vier Hoog Eindhoven
+                        </h3>
+
+                        <p>
+                            Ga samen bowlen en maak van een
+                            eerste ontmoeting een leuke activiteit.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                ⭐ 4.0
+                            </span>
+
+                            <button onclick="viewActivity('Vier Hoog Eindhoven')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 4 -->
+
+                <article
+                    class="activity-card"
+                    data-category="film"
+                    data-name="pathe eindhoven film bioscoop"
+                >
+
+                    <div class="activity-image movie">
+                        🎬
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                🎬 FILM
+                            </span>
+
+                            <span class="distance">
+                                Centrum
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Pathé Eindhoven
+                        </h3>
+
+                        <p>
+                            Samen een film kijken kan een
+                            laagdrempelige manier zijn om
+                            iemand te leren kennen.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                🎟️ Bioscoop
+                            </span>
+
+                            <button onclick="viewActivity('Pathé Eindhoven')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 5 -->
+
+                <article
+                    class="activity-card"
+                    data-category="sport"
+                    data-name="otten innovation cup sport voetbal"
+                >
+
+                    <div class="activity-image sport">
+                        ⚽
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                ⚽ SPORT
+                            </span>
+
+                            <span class="distance">
+                                Eindhoven
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Otten Innovation Cup
+                        </h3>
+
+                        <p>
+                            Een sportevenement in Eindhoven
+                            voor liefhebbers van voetbal en sport.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                📅 14 september
+                            </span>
+
+                            <button onclick="viewActivity('Otten Innovation Cup')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 6 -->
+
+                <article
+                    class="activity-card"
+                    data-category="gaming"
+                    data-name="laser quest gaming"
+                >
+
+                    <div class="activity-image gaming">
+                        🎮
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                🎮 GAMING
+                            </span>
+
+                            <span class="distance">
+                                Eindhoven
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Laser Quest
+                        </h3>
+
+                        <p>
+                            Speel samen een actieve game en
+                            werk als team tegen andere spelers.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                🎮 Indoor
+                            </span>
+
+                            <button onclick="viewActivity('Laser Quest')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 7 -->
+
+                <article
+                    class="activity-card"
+                    data-category="cultuur"
+                    data-name="van abbemuseum cultuur museum"
+                >
+
+                    <div class="activity-image culture">
+                        🎨
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                🎨 CULTUUR
+                            </span>
+
+                            <span class="distance">
+                                Centrum
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Van Abbemuseum
+                        </h3>
+
+                        <p>
+                            Ontdek moderne kunst en gebruik
+                            de tentoonstelling als gesprekstarter.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                🎨 Museum
+                            </span>
+
+                            <button onclick="viewActivity('Van Abbemuseum')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ACTIVITEIT 8 -->
+
+                <article
+                    class="activity-card"
+                    data-category="evenement"
+                    data-name="lichtjesroute run evenement"
+                >
+
+                    <div class="activity-image event">
+                        ✨
+                    </div>
+
+                    <div class="activity-content">
+
+                        <div class="activity-top">
+
+                            <span class="tag">
+                                🎉 EVENEMENT
+                            </span>
+
+                            <span class="distance">
+                                Eindhoven
+                            </span>
+
+                        </div>
+
+                        <h3>
+                            Lichtjesroute Run
+                        </h3>
+
+                        <p>
+                            Een sportief evenement waarbij
+                            je samen Eindhoven kunt ontdekken.
+                        </p>
+
+                        <div class="activity-bottom">
+
+                            <span>
+                                📅 18 september
+                            </span>
+
+                            <button onclick="viewActivity('Lichtjesroute Run')">
+                                Bekijk →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            SAMEN — Van alleen naar samen.
+        </p>
+
+    </footer>
+
+
+
+    <script src="activiteiten.js"></script>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,703 @@
+* {
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --background: #070a10;
+
+    --card: rgba(255, 255, 255, 0.055);
+
+    --card-hover: rgba(255, 255, 255, 0.09);
+
+    --border: rgba(255, 255, 255, 0.1);
+
+    --text: #f5f7fb;
+
+    --muted: #8d95a5;
+
+    --cyan: #55e6ff;
+
+    --purple: #9b7cff;
+
+    --pink: #ff6bd6;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(85, 230, 255, 0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(155, 124, 255, 0.12),
+            transparent 30%
+        ),
+
+        var(--background);
+}
+
+
+/* HEADER */
+
+header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    height: 70px;
+
+    padding: 0 40px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background:
+        rgba(7, 10, 16, 0.8);
+
+    backdrop-filter: blur(20px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.location {
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* MAIN */
+
+main {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 25px 100px;
+}
+
+
+/* INTRO */
+
+.intro {
+
+    margin-bottom: 40px;
+}
+
+
+.eyebrow {
+
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+h1 {
+
+    margin: 0;
+
+    font-size: clamp(42px, 7vw, 72px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+}
+
+
+h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+
+.intro-text {
+
+    max-width: 550px;
+
+    margin-top: 25px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* SEARCH */
+
+.search-section {
+
+    margin-bottom: 25px;
+}
+
+
+.search-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    height: 58px;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.2s;
+}
+
+
+.search-box:focus-within {
+
+    border-color:
+        rgba(85, 230, 255, 0.5);
+
+    box-shadow:
+        0 0 25px
+        rgba(85, 230, 255, 0.08);
+}
+
+
+.search-box input {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+
+.search-box input::placeholder {
+
+    color: #6f7685;
+}
+
+
+/* CATEGORIES */
+
+.categories {
+
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding-bottom: 10px;
+
+    margin-bottom: 55px;
+
+    scrollbar-width: none;
+}
+
+
+.categories::-webkit-scrollbar {
+
+    display: none;
+}
+
+
+.category {
+
+    flex-shrink: 0;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    color: var(--muted);
+
+    padding: 11px 16px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.category:hover {
+
+    background: var(--card-hover);
+
+    color: white;
+}
+
+
+.category.active {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(85, 230, 255, 0.15),
+            rgba(155, 124, 255, 0.15)
+        );
+
+    color: white;
+
+    border-color:
+        rgba(85, 230, 255, 0.35);
+}
+
+
+/* SECTION HEADING */
+
+.section-heading {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    margin-bottom: 25px;
+}
+
+
+.small-label {
+
+    margin: 0 0 5px;
+
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+h2 {
+
+    margin: 0;
+
+    font-size: 28px;
+
+    letter-spacing: -1px;
+}
+
+
+#resultCount {
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* ACTIVITIES GRID */
+
+.activities {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+/* CARD */
+
+.activity-card {
+
+    min-height: 250px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    background: var(--card);
+
+    backdrop-filter: blur(15px);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.activity-card:hover {
+
+    transform: translateY(-5px);
+
+    background: var(--card-hover);
+
+    border-color:
+        rgba(85, 230, 255, 0.3);
+}
+
+
+/* IMAGE AREA */
+
+.activity-image {
+
+    height: 130px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 55px;
+
+    position: relative;
+}
+
+
+.activity-image::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(7, 10, 16, 0.5)
+        );
+}
+
+
+/* IMAGE COLORS */
+
+.coffee {
+
+    background:
+        radial-gradient(
+            circle,
+            #704b38,
+            #201614
+        );
+}
+
+
+.bowling {
+
+    background:
+        radial-gradient(
+            circle,
+            #443b91,
+            #111225
+        );
+}
+
+
+.movie {
+
+    background:
+        radial-gradient(
+            circle,
+            #693c78,
+            #17101d
+        );
+}
+
+
+.sport {
+
+    background:
+        radial-gradient(
+            circle,
+            #245d58,
+            #0c1d1d
+        );
+}
+
+
+.gaming {
+
+    background:
+        radial-gradient(
+            circle,
+            #513b87,
+            #120d20
+        );
+}
+
+
+.culture {
+
+    background:
+        radial-gradient(
+            circle,
+            #78513b,
+            #211610
+        );
+}
+
+
+.event {
+
+    background:
+        radial-gradient(
+            circle,
+            #684b91,
+            #171022
+        );
+}
+
+
+/* CONTENT */
+
+.activity-content {
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+.activity-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.tag {
+
+    color: var(--cyan);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+}
+
+
+.distance {
+
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+h3 {
+
+    margin: 13px 0 8px;
+
+    font-size: 19px;
+}
+
+
+.activity-content p {
+
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* CARD BOTTOM */
+
+.activity-bottom {
+
+    margin-top: auto;
+
+    padding-top: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+.activity-bottom button {
+
+    border: none;
+
+    background: transparent;
+
+    color: var(--cyan);
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.activity-bottom button:hover {
+
+    color: white;
+}
+
+
+/* FOOTER */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #555d6d;
+
+    border-top:
+        1px solid var(--border);
+
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+
+        padding: 0 20px;
+
+        height: 62px;
+    }
+
+
+    main {
+
+        padding: 45px 16px 80px;
+    }
+
+
+    h1 {
+
+        font-size: 48px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .activities {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-heading {
+
+        align-items: start;
+
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+
+    .activity-card {
+
+        min-height: 240px;
+    }
+
+}

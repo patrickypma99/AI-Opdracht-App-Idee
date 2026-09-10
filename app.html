@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Samen</title>
+    <title>Question</title>
 
     <link rel="stylesheet" href="app.css">
 </head>
@@ -43,9 +43,10 @@
                 <span>Bekijk mijn profiel</span>
             </button>
 
-            <button class="menu-item" onclick="openPage('activiteiten')">
+            <a href="activiteiten.html" class="menu-item">
                 <span class="icon">🎉</span>
-                <span>Bekijk activiteiten</span>
+                <span>Activiteiten</span>
+            </a>
             </button>
 
             <button class="menu-item" onclick="openPage('instellingen')">
@@ -56,6 +57,93 @@
         </div>
 
     </main>
+
+        <!-- Videocall requests -->
+    <div class="call-bar">
+        <div class="call-header">
+            <div>
+                <span class="call-label">VIDEOGESPREK</span>
+                <h2>Nieuwe verzoeken</h2>
+            </div>
+
+            <span class="request-count">3 verzoeken</span>
+        </div>
+
+        <div class="call-requests">
+
+            <!-- Persoon 1 -->
+            <div class="call-request">
+                <div class="person-info">
+                    <div class="person-avatar">L</div>
+
+                    <div>
+                        <h3>Lisa</h3>
+                        <p>Vrouw · 26 jaar</p>
+                        <span>☕ Koffie · 🎬 Film · ✈️ Reizen</span>
+                    </div>
+                </div>
+
+                <div class="call-actions">
+                    <button class="accept-button" onclick="acceptCall('Lisa')">
+                        Accepteren
+                    </button>
+
+                    <button class="decline-button" onclick="declineCall(this)">
+                        Weigeren
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Persoon 2 -->
+            <div class="call-request">
+                <div class="person-info">
+                    <div class="person-avatar">D</div>
+
+                    <div>
+                        <h3>David</h3>
+                        <p>Man · 29 jaar</p>
+                        <span>🎮 Gaming · ⚽ Sport · 🎵 Muziek</span>
+                    </div>
+                </div>
+
+                <div class="call-actions">
+                    <button class="accept-button" onclick="acceptCall('David')">
+                        Accepteren
+                    </button>
+
+                    <button class="decline-button" onclick="declineCall(this)">
+                        Weigeren
+                    </button>
+                </div>
+            </div>
+
+
+            <!-- Persoon 3 -->
+            <div class="call-request">
+                <div class="person-info">
+                    <div class="person-avatar">S</div>
+
+                    <div>
+                        <h3>Sophie</h3>
+                        <p>Vrouw · 24 jaar</p>
+                        <span>🏃 Sport · 🌍 Reizen · 🎨 Cultuur</span>
+                    </div>
+                </div>
+
+                <div class="call-actions">
+                    <button class="accept-button" onclick="acceptCall('Sophie')">
+                        Accepteren
+                    </button>
+
+                    <button class="decline-button" onclick="declineCall(this)">
+                        Weigeren
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
     <footer>

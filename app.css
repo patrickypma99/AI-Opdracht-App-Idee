@@ -277,6 +277,8 @@ main::before {
         border-color 0.3s ease,
         background 0.3s ease,
         box-shadow 0.3s ease;
+
+    text-decoration: none;
 }
 
 
@@ -420,6 +422,187 @@ footer {
     border-top: 1px solid var(--border);
 }
 
+.call-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background: rgba(8, 11, 18, 0.95);
+    backdrop-filter: blur(20px);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    padding: 20px 30px;
+
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Titel van de balk */
+
+.call-header {
+    max-width: 1200px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.call-label {
+    color: #55e6ff;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.call-header h2 {
+    color: white;
+    margin: 3px 0 0;
+    font-size: 20px;
+}
+
+.request-count {
+    color: #9299a8;
+    font-size: 13px;
+}
+
+
+/* Personen naast elkaar */
+
+.call-requests {
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    gap: 15px;
+
+    overflow-x: auto;
+}
+
+
+/* Eén verzoek */
+
+.call-request {
+    min-width: 330px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 15px;
+
+    background: rgba(255, 255, 255, 0.055);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    border-radius: 14px;
+}
+
+
+/* Persoonsinformatie */
+
+.person-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.person-avatar {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        135deg,
+        #55e6ff,
+        #9b7cff
+    );
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.person-info h3 {
+    color: white;
+    margin: 0 0 3px;
+}
+
+.person-info p {
+    color: #9299a8;
+    margin: 0 0 5px;
+    font-size: 13px;
+}
+
+.person-info span {
+    color: #c7ccd6;
+    font-size: 11px;
+}
+
+
+/* Knoppen */
+
+.call-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.call-actions button {
+    border: none;
+    border-radius: 7px;
+
+    padding: 7px 12px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+/* Accepteren */
+
+.accept-button {
+    background: linear-gradient(
+        135deg,
+        #55e6ff,
+        #9b7cff
+    );
+
+    color: white;
+}
+
+.accept-button:hover {
+    opacity: 0.8;
+}
+
+
+/* Weigeren */
+
+.decline-button {
+    background: rgba(255, 255, 255, 0.08);
+    color: #9299a8;
+
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.decline-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
 
 /* =========================================
    MOBILE
@@ -489,5 +672,25 @@ footer {
 
         flex-shrink: 0;
     }
+
+
+    .call-bar {
+        padding: 15px;
+    }
+
+    .call-header {
+        margin-bottom: 10px;
+    }
+
+    .call-header h2 {
+        font-size: 17px;
+    }
+
+    .call-request {
+        min-width: 280px;
+    }
+
 }
+
+
 

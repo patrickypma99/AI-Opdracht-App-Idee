@@ -21,3 +21,13 @@ function openPage(page) {
     }
 
 }
+
+function acceptCall(name) {
+    alert("Videogesprek met " + name + " geaccepteerd!");
+}
+
+function declineCall(button) {
+    const request = button.closest(".call-request");
+
+    request.remove();
+}
