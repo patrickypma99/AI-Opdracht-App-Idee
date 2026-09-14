@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mijn vouchers | SAMEN</title>
+
+    <link rel="stylesheet" href="vouchers.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <a href="app.html" class="logo">
+            Question
+        </a>
+
+        <nav class="nav">
+            <p>Create Your Social Space</p>
+        </nav>
+
+    </header>
+
+
+    <main class="main">
+
+        <section class="page-intro">
+
+            <p class="eyebrow">JOUW BELONINGEN</p>
+
+            <h1>Mijn vouchers</h1>
+
+            <p>
+                Bekijk welke vouchers je hebt gekregen,
+                met wie je ze hebt verdiend en hoeveel korting
+                je hebt verzameld.
+            </p>
+
+        </section>
+
+
+        <section class="voucher-overview">
+
+            <div class="overview-card">
+                <span class="overview-icon">🎟️</span>
+
+                <div>
+                    <p>Beschikbare vouchers</p>
+                    <strong id="voucherCount">0</strong>
+                </div>
+            </div>
+
+            <div class="overview-card">
+                <span class="overview-icon">💸</span>
+
+                <div>
+                    <p>Totale korting</p>
+                    <strong id="totalDiscount">€0</strong>
+                </div>
+            </div>
+
+            <div class="overview-card">
+                <span class="overview-icon">🤝</span>
+
+                <div>
+                    <p>Nieuwe connecties</p>
+                    <strong id="connectionCount">0</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">JOUW BELONINGEN</p>
+                    <h2>Ontvangen vouchers</h2>
+                </div>
+            </div>
+
+            <div id="voucherList" class="voucher-list"></div>
+
+        </section>
+
+
+        <section class="section saving-section">
+
+            <div class="saving-content">
+
+                <p class="eyebrow">SPAREN VOOR SAMEN</p>
+
+                <h2>Waar wil je voor sparen?</h2>
+
+                <p>
+                    Ontdek activiteiten waarvoor je vouchers kunt sparen.
+                    Samen leuke dingen doen wordt zo extra aantrekkelijk.
+                </p>
+
+                <a href="activiteiten.html" class="primary-button">
+                    Bekijk activiteitssuggesties
+                </a>
+
+            </div>
+
+            <div class="saving-visual">
+                <span>🎯</span>
+                <span>🎟️</span>
+                <span>🤝</span>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Agenda popup -->
+
+    <div id="calendarModal" class="modal hidden">
+
+        <div class="modal-background" onclick="closeCalendar()"></div>
+
+        <div class="modal-content">
+
+            <button class="close-button" onclick="closeCalendar()">
+                ×
+            </button>
+
+            <p class="eyebrow">AFSPRAAK PLANNEN</p>
+
+            <h2 id="calendarTitle">Plan een afspraak</h2>
+
+            <p id="calendarDescription"></p>
+
+
+            <div class="calendar-box">
+
+                <label for="appointmentDate">
+                    Voorgestelde datum
+                </label>
+
+                <input
+                    type="date"
+                    id="appointmentDate"
+                >
+
+                <p class="calendar-info">
+                    De voorgestelde datum is gebaseerd op de fictieve
+                    beschikbaarheid van beide personen.
+                </p>
+
+            </div>
+
+
+            <div class="time-options">
+
+                <p>Beschikbare tijd</p>
+
+                <button class="time-button" onclick="selectTime(this)">
+                    10:00
+                </button>
+
+                <button class="time-button" onclick="selectTime(this)">
+                    14:00
+                </button>
+
+                <button class="time-button" onclick="selectTime(this)">
+                    19:00
+                </button>
+
+            </div>
+
+
+            <button class="primary-button full-button" onclick="confirmAppointment()">
+                Bevestig afspraak
+            </button>
+
+            <p id="appointmentMessage" class="appointment-message"></p>
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <p>@ 2026 Question</p>
+
+    </footer>
+
+
+    <script src="vouchers.js"></script>
+
+</body>
+
+</html>

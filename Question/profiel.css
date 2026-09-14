@@ -1,0 +1,1148 @@
+/* =========================================
+   HUMAN × AI
+   Futuristic profile interface
+   ========================================= */
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+    --background: #080b12;
+
+    --surface: rgba(255, 255, 255, 0.055);
+    --surface-hover: rgba(255, 255, 255, 0.09);
+
+    --text: #f4f7fb;
+    --text-soft: #9299a8;
+
+    --cyan: #55e6ff;
+    --purple: #9b7cff;
+    --pink: #ff6bd6;
+
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    margin: 0;
+
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(85, 230, 255, 0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(155, 124, 255, 0.12),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(255, 107, 214, 0.07),
+            transparent 35%
+        ),
+
+        var(--background);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   BACKGROUND GRID
+   ========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.18;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+
+    height: 75px;
+
+    padding: 0 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background: rgba(8, 11, 18, 0.72);
+
+    backdrop-filter: blur(20px);
+
+    -webkit-backdrop-filter: blur(20px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.logo-link {
+    text-decoration: none;
+}
+
+
+header h1 {
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    letter-spacing: -1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+
+header p {
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 13px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 30px 100px;
+}
+
+
+/* =========================================
+   INTRO
+   ========================================= */
+
+.profile-intro {
+    margin-bottom: 45px;
+}
+
+
+.section-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 3px;
+
+    opacity: 0.8;
+}
+
+
+.profile-intro h2 {
+    margin: 0 0 10px;
+
+    font-size: 34px;
+
+    font-weight: 600;
+
+    letter-spacing: -1.5px;
+}
+
+
+.profile-intro p {
+    max-width: 650px;
+
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   PROFILE SECTIONS
+   ========================================= */
+
+.profile-section {
+    margin-bottom: 35px;
+}
+
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 18px;
+}
+
+
+.small-label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--cyan);
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 25px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.8px;
+}
+
+
+/* =========================================
+   PROFILE CARD
+   ========================================= */
+
+.profile-card {
+    position: relative;
+
+    padding: 30px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+
+    border-radius: 24px;
+
+    background: var(--surface);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+.profile-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    top: -80px;
+
+    right: -70px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    opacity: 0.08;
+
+    filter: blur(40px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   AVATAR
+   ========================================= */
+
+.profile-avatar {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90px;
+
+    height: 90px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 28px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    color: white;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.08),
+
+        0 0 30px rgba(85, 230, 255, 0.08);
+}
+
+
+/* =========================================
+   FORM GRID
+   ========================================= */
+
+.form-grid {
+    position: relative;
+
+    z-index: 2;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+
+label {
+    color: var(--text);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--text-soft);
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+
+    border-color: rgba(85, 230, 255, 0.6);
+
+    box-shadow:
+        0 0 25px rgba(85, 230, 255, 0.08);
+}
+
+
+select option {
+    background: #080b12;
+
+    color: white;
+}
+
+
+textarea {
+    position: relative;
+
+    z-index: 2;
+
+    resize: vertical;
+
+    line-height: 1.6;
+}
+
+
+.input-help {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 10px 0 0;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   INTERESTS
+   ========================================= */
+
+.card-description {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 22px;
+
+    color: var(--text-soft);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+.interests-container {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 22px;
+}
+
+
+.interest-tag {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 9px 12px;
+
+    border: 1px solid rgba(85, 230, 255, 0.25);
+
+    border-radius: 999px;
+
+    background:
+        rgba(85, 230, 255, 0.08);
+
+    color: var(--cyan);
+
+    font-size: 12px;
+}
+
+
+.remove-interest {
+    border: none;
+
+    background: transparent;
+
+    color: var(--text-soft);
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
+
+.remove-interest:hover {
+    color: var(--pink);
+}
+
+
+.interest-input-row {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    gap: 12px;
+}
+
+
+.interest-input-row input {
+    flex: 1;
+}
+
+
+.secondary-button,
+.primary-button,
+.save-button {
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 13px 18px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.secondary-button {
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+}
+
+
+.secondary-button:hover {
+    background: rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-2px);
+}
+
+
+.primary-button,
+.save-button {
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--purple)
+        );
+
+    color: white;
+}
+
+
+.primary-button:hover,
+.save-button:hover {
+    opacity: 0.85;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(85, 230, 255, 0.12);
+}
+
+
+button:disabled {
+    opacity: 0.35;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* Suggesties */
+
+.suggested-interests {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 20px;
+}
+
+
+.suggested-interests span {
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+
+.suggested-interests button {
+    padding: 7px 11px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: var(--text-soft);
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.suggested-interests button:hover {
+    color: var(--cyan);
+
+    border-color: var(--cyan);
+
+    background: rgba(85, 230, 255, 0.06);
+}
+
+
+/* =========================================
+   QUESTIONS / AI TRAINING
+   ========================================= */
+
+.questions-card {
+    padding: 35px;
+}
+
+
+.ai-symbol {
+    position: relative;
+
+    z-index: 2;
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(85, 230, 255, 0.15),
+            rgba(155, 124, 255, 0.2)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: var(--cyan);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.03);
+}
+
+
+.questions-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 12px;
+
+    font-size: 23px;
+}
+
+
+.progress-container {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 30px 0;
+}
+
+
+.progress-text {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 10px;
+
+    color: var(--text-soft);
+
+    font-size: 12px;
+}
+
+
+.progress-bar {
+    width: 100%;
+
+    height: 7px;
+
+    overflow: hidden;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+.progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--cyan),
+            var(--purple),
+            var(--pink)
+        );
+
+    transition: width 0.3s ease;
+}
+
+
+/* Vraag */
+
+.question-box {
+    position: relative;
+
+    z-index: 2;
+
+    padding: 25px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.035);
+}
+
+
+.question-box h3 {
+    margin-bottom: 22px;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+}
+
+
+.answer-options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+.answer-option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.answer-option:hover {
+    background: rgba(85, 230, 255, 0.08);
+
+    border-color: rgba(85, 230, 255, 0.4);
+
+    transform: translateX(3px);
+}
+
+
+.answer-option.selected {
+    background: rgba(85, 230, 255, 0.12);
+
+    border-color: var(--cyan);
+
+    color: var(--cyan);
+}
+
+
+.question-actions {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+.question-result {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    display: none;
+
+    border: 1px solid rgba(85, 230, 255, 0.25);
+
+    border-radius: 14px;
+
+    background: rgba(85, 230, 255, 0.08);
+
+    color: var(--cyan);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   SAVE SECTION
+   ========================================= */
+
+.save-section {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+
+.save-button {
+    min-width: 240px;
+
+    padding: 16px 25px;
+
+    font-size: 14px;
+}
+
+
+#saveMessage {
+    min-height: 20px;
+
+    margin: 0;
+
+    color: var(--cyan);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 30px;
+
+    border-top: 1px solid var(--border);
+
+    color: #626978;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 65px;
+
+        padding: 0 20px;
+    }
+
+
+    header h1 {
+        font-size: 22px;
+    }
+
+
+    header p {
+        display: none;
+    }
+
+
+    main {
+        padding: 45px 18px 70px;
+    }
+
+
+    .profile-intro h2 {
+        font-size: 28px;
+    }
+
+
+    .profile-intro p {
+        font-size: 14px;
+    }
+
+
+    .section-heading h2 {
+        font-size: 22px;
+    }
+
+
+    .profile-card,
+    .questions-card {
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    .profile-avatar {
+        width: 70px;
+
+        height: 70px;
+
+        border-radius: 22px;
+
+        font-size: 27px;
+    }
+
+
+    .interest-input-row {
+        flex-direction: column;
+    }
+
+
+    .interest-input-row button {
+        width: 100%;
+    }
+
+
+    .question-box {
+        padding: 20px;
+    }
+
+
+    .question-actions {
+        flex-direction: column-reverse;
+
+        align-items: stretch;
+    }
+
+
+    .question-actions button {
+        width: 100%;
+    }
+
+
+    .save-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL PHONES
+   ========================================= */
+
+@media (max-width: 400px) {
+
+    main {
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+
+    .profile-card,
+    .questions-card {
+        padding: 18px;
+    }
+
+
+    .profile-intro h2 {
+        font-size: 26px;
+    }
+
+}

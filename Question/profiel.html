@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mijn profiel - Samen</title>
+
+    <link rel="stylesheet" href="profiel.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <a href="app.html" class="logo-link">
+            <h1>Question</h1>
+        </a>
+
+        <p>Create Your Social Space</p>
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <section class="profile-intro">
+
+            <span class="section-label">YOUR IDENTITY</span>
+
+            <h2>Mijn profiel</h2>
+
+            <p>
+                Vertel iets over jezelf en ontdek mensen met dezelfde interesses.
+            </p>
+
+        </section>
+
+
+        <!-- BASISGEGEVENS -->
+
+        <section class="profile-section">
+
+            <div class="section-heading">
+                <div>
+                    <span class="small-label">01 / PERSONAL DATA</span>
+
+                    <h2>Mijn gegevens</h2>
+                </div>
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+                    P
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label for="naam">
+                            Naam
+                        </label>
+
+                        <input
+                            type="text"
+                            id="naam"
+                            value="Patrick"
+                            placeholder="Vul je naam in"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="leeftijd">
+                            Leeftijd
+                        </label>
+
+                        <input
+                            type="number"
+                            id="leeftijd"
+                            value="27"
+                            min="18"
+                            max="100"
+                            placeholder="Vul je leeftijd in"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="geslacht">
+                            Geslacht
+                        </label>
+
+                        <select id="geslacht">
+
+                            <option value="man">
+                                Man
+                            </option>
+
+                            <option value="vrouw">
+                                Vrouw
+                            </option>
+
+                            <option value="anders">
+                                Anders
+                            </option>
+
+                            <option value="liever niet zeggen">
+                                Zeg ik liever niet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- BESCHRIJVING -->
+
+        <section class="profile-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-label">02 / ABOUT YOU</span>
+
+                    <h2>Over mij</h2>
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <label for="beschrijving">
+                    Beschrijf jezelf
+                </label>
+
+                <textarea
+                    id="beschrijving"
+                    rows="5"
+                    placeholder="Vertel iets over jezelf, je karakter en wat je leuk vindt..."
+                >Ik ben Patrick en ik vind het leuk om nieuwe mensen te leren kennen.</textarea>
+
+
+                <p class="input-help">
+                    Deze beschrijving helpt anderen om een beter beeld van jou te krijgen.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- INTERESSES -->
+
+        <section class="profile-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-label">03 / INTERESTS</span>
+
+                    <h2>Mijn interesses</h2>
+                </div>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <p class="card-description">
+                    Voeg interesses toe die bij jou passen.
+                    Deze worden gebruikt om mensen met gemeenschappelijke interesses te vinden.
+                </p>
+
+
+                <div
+                    id="interestsContainer"
+                    class="interests-container"
+                >
+
+                    <!-- Interesses worden met JavaScript toegevoegd -->
+
+                </div>
+
+
+                <div class="interest-input-row">
+
+                    <input
+                        type="text"
+                        id="interestInput"
+                        placeholder="Nieuwe interesse..."
+                    >
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        onclick="addInterest()"
+                    >
+                        + Toevoegen
+                    </button>
+
+                </div>
+
+
+                <div class="suggested-interests">
+
+                    <span>Suggesties:</span>
+
+                    <button
+                        type="button"
+                        onclick="addSuggestedInterest('Koffie drinken')"
+                    >
+                        Koffie drinken
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addSuggestedInterest('Gaming')"
+                    >
+                        Gaming
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addSuggestedInterest('Sport')"
+                    >
+                        Sport
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addSuggestedInterest('Films')"
+                    >
+                        Films
+                    </button>
+
+                    <button
+                        type="button"
+                        onclick="addSuggestedInterest('Reizen')"
+                    >
+                        Reizen
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ALGORITME VRAGEN -->
+
+        <section class="profile-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="small-label">04 / DISCOVERY TRAINING</span>
+
+                    <h2>Leer mij beter kennen</h2>
+                </div>
+
+            </div>
+
+
+            <div class="profile-card questions-card">
+
+                <div class="ai-symbol">
+                    AI
+                </div>
+
+
+                <h3>
+                    Beantwoord een aantal vragen
+                </h3>
+
+
+                <p class="card-description">
+
+                    Door deze vragen te beantwoorden leert het platform beter
+                    begrijpen wie jij bent. Je antwoorden helpen om mensen te
+                    vinden met gemeenschappelijke interesses en eigenschappen.
+
+                </p>
+
+
+                <div class="progress-container">
+
+                    <div class="progress-text">
+
+                        <span id="progressText">
+                            Vraag 1 van 5
+                        </span>
+
+                        <span id="progressPercentage">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            id="progressFill"
+                            class="progress-fill"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div id="questionContainer">
+
+                    <!-- Vraag wordt door JavaScript geplaatst -->
+
+                </div>
+
+
+                <div class="question-actions">
+
+                    <button
+                        type="button"
+                        id="previousQuestionButton"
+                        class="secondary-button"
+                        onclick="previousQuestion()"
+                        disabled
+                    >
+                        ← Vorige
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="nextQuestionButton"
+                        class="primary-button"
+                        onclick="nextQuestion()"
+                    >
+                        Volgende →
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="questionResult"
+                    class="question-result"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- OPSLAAN -->
+
+        <section class="save-section">
+
+            <button
+                type="button"
+                class="save-button"
+                onclick="saveProfile()"
+            >
+                Profiel opslaan
+            </button>
+
+            <p id="saveMessage"></p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Van alleen naar samen.
+        </p>
+
+        <p>
+            © 2026 Samen
+        </p>
+
+    </footer>
+
+
+    <script src="profiel.js"></script>
+
+</body>
+
+</html>
