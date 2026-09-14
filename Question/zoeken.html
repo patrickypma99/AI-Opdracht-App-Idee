@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SAME - Iemand zoeken</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="zoeken.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <a href="app.html" class="logo-link">
+            <h1>Question</h1>
+        </a>
+
+        <p>Create your social space</p>
+
+    </header>
+
+
+    <!-- MAIN -->
+
+    <main>
+
+        <section class="search-intro">
+
+            <h2>Find your people</h2>
+
+
+        </section>
+
+
+        <!-- ZOEKBALK -->
+         
+
+        <section class="search-section">
+
+        
+                
+                <input
+                    
+                    type="text"
+                    id="searchInput"
+                    placeholder="Ik zoek iemand die...."
+                    oninput="searchProfiles()"
+                >
+
+            </div>
+
+            <p class="search-help">
+                Zoek op naam, geslacht, leeftijd of interesses.
+            </p>
+
+        </section>
+
+
+        <!-- AANBEVOLEN -->
+
+        <section class="recommended-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">DISCOVER</span>
+                    <h2>Aanbevolen voor jou</h2>
+                </div>
+
+                <span id="resultCount">
+                    8 personen
+                </span>
+
+            </div>
+
+
+            <div class="profiles-grid">
+
+
+                <!-- Lisa -->
+
+                <article
+                    class="profile-card"
+                    data-search="lisa vrouw 26 koffie film reizen cultuur"
+                >
+
+                    <div class="profile-avatar avatar-lisa">
+                        L
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Lisa</h3>
+
+                        <p class="profile-details">
+                            Vrouw · 26 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Houdt van koffie, films en nieuwe plekken ontdekken.
+                        </p>
+
+                        <div class="interests">
+                            <span>Koffie</span>
+                            <span>Film</span>
+                            <span>Reizen</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Lisa')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- David -->
+
+                <article
+                    class="profile-card"
+                    data-search="david man 29 gaming sport voetbal muziek"
+                >
+
+                    <div class="profile-avatar avatar-david">
+                        D
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>David</h3>
+
+                        <p class="profile-details">
+                            Man · 29 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Zoekt iemand om mee te gamen of te sporten.
+                        </p>
+
+                        <div class="interests">
+                            <span>Gaming</span>
+                            <span>Sport</span>
+                            <span>Muziek</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('David')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Sophie -->
+
+                <article
+                    class="profile-card"
+                    data-search="sophie vrouw 24 sport reizen cultuur wandelen"
+                >
+
+                    <div class="profile-avatar avatar-sophie">
+                        S
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Sophie</h3>
+
+                        <p class="profile-details">
+                            Vrouw · 24 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Vindt het leuk om actief bezig te zijn.
+                        </p>
+
+                        <div class="interests">
+                            <span>Sport</span>
+                            <span>Reizen</span>
+                            <span>Cultuur</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Sophie')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Mark -->
+
+                <article
+                    class="profile-card"
+                    data-search="mark man 27 koffie gaming films voetbal"
+                >
+
+                    <div class="profile-avatar avatar-mark">
+                        M
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Mark</h3>
+
+                        <p class="profile-details">
+                            Man · 27 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Houdt van films, koffie en ontspannen activiteiten.
+                        </p>
+
+                        <div class="interests">
+                            <span>Koffie</span>
+                            <span>Gaming</span>
+                            <span>Films</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Mark')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Emma -->
+
+                <article
+                    class="profile-card"
+                    data-search="emma vrouw 28 lezen boeken yoga natuur"
+                >
+
+                    <div class="profile-avatar avatar-emma">
+                        E
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Emma</h3>
+
+                        <p class="profile-details">
+                            Vrouw · 28 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Zoekt iemand voor een wandeling of gesprek.
+                        </p>
+
+                        <div class="interests">
+                            <span>Lezen</span>
+                            <span>Yoga</span>
+                            <span>Natuur</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Emma')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Thomas -->
+
+                <article
+                    class="profile-card"
+                    data-search="thomas man 25 technologie gaming koken"
+                >
+
+                    <div class="profile-avatar avatar-thomas">
+                        T
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Thomas</h3>
+
+                        <p class="profile-details">
+                            Man · 25 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Wil nieuwe mensen leren kennen en samen koken.
+                        </p>
+
+                        <div class="interests">
+                            <span>Technologie</span>
+                            <span>Gaming</span>
+                            <span>Koken</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Thomas')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Noor -->
+
+                <article
+                    class="profile-card"
+                    data-search="noor vrouw 23 muziek dans festivals fotografie"
+                >
+
+                    <div class="profile-avatar avatar-noor">
+                        N
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Noor</h3>
+
+                        <p class="profile-details">
+                            Vrouw · 23 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Houdt van muziek, dansen en evenementen.
+                        </p>
+
+                        <div class="interests">
+                            <span>Muziek</span>
+                            <span>Dans</span>
+                            <span>Fotografie</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Noor')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Ruben -->
+
+                <article
+                    class="profile-card"
+                    data-search="ruben man 30 hardlopen sport natuur fietsen"
+                >
+
+                    <div class="profile-avatar avatar-ruben">
+                        R
+                    </div>
+
+                    <div class="profile-content">
+
+                        <h3>Ruben</h3>
+
+                        <p class="profile-details">
+                            Man · 30 jaar
+                        </p>
+
+                        <p class="profile-description">
+                            Zoekt iemand om samen actief bezig te zijn.
+                        </p>
+
+                        <div class="interests">
+                            <span>Hardlopen</span>
+                            <span>Fietsen</span>
+                            <span>Reizen</span>
+                        </div>
+
+                        <button
+                            class="call-button"
+                            onclick="sendCallRequest('Ruben')"
+                        >
+                            Stuur belverzoek
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="zoeken.js"></script>
+
+</body>
+</html>
