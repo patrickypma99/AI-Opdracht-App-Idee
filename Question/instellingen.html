@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instellingen</title>
+
+    <link rel="stylesheet" href="instellingen.css">
+</head>
+
+<body>
+    <header>
+
+        <a href="app.html" class="logo-link">
+
+            <h1>Question</h1>
+            
+        </a>
+
+        <p>Create Your Social Space - 273 People Online 🟢</p>
+
+    </header>
+
+    <main class="settings-container">
+
+        <div class="settings-intro">
+            <p class="settings-label">PERSONAL MATCHING</p>
+
+            <h2>Wie wil je ontmoeten?</h2>
+
+            <p>
+                Stel hieronder in naar wat voor mensen je op zoek bent.
+            </p>
+        </div>
+
+        <form id="settingsForm">
+
+            <!-- Interesses -->
+            <section class="settings-card">
+
+                <h3>Specifieke interesses</h3>
+
+                <p class="description">
+                    Kies de interesses die je belangrijk vindt.
+                </p>
+
+                <div class="interest-options">
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Sport">
+                        Sport
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Muziek">
+                        Muziek
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Gamen">
+                        Gamen
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Reizen">
+                        Reizen
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Koffie">
+                        Koffie drinken
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Films">
+                        Films
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Kunst">
+                        Kunst
+                    </label>
+
+                    <label>
+                        <input type="checkbox" name="interests" value="Lezen">
+                        Lezen
+                    </label>
+
+                </div>
+
+            </section>
+
+            <!-- Geslacht -->
+            <section class="settings-card">
+
+                <h3>Geslacht</h3>
+
+                <p class="description">
+                    Met wie wil je contact kunnen maken?
+                </p>
+
+                <div class="radio-options">
+
+                    <label>
+                        <input type="radio" name="gender" value="Iedereen" checked>
+                        Iedereen
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Man">
+                        Man
+                    </label>
+
+                    <label>
+                        <input type="radio" name="gender" value="Vrouw">
+                        Vrouw
+                    </label>
+
+                </div>
+
+            </section>
+
+            <!-- Leeftijd -->
+            <section class="settings-card">
+
+                <h3>Leeftijd</h3>
+
+                <p class="description">
+                    Kies de gewenste leeftijdsrange.
+                </p>
+
+                <div class="age-inputs">
+
+                    <div>
+                        <label for="minAge">Van</label>
+                        <input
+                            type="number"
+                            id="minAge"
+                            name="minAge"
+                            min="18"
+                            max="100"
+                            value="18"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label for="maxAge">Tot</label>
+                        <input
+                            type="number"
+                            id="maxAge"
+                            name="maxAge"
+                            min="18"
+                            max="100"
+                            value="35"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Locatie -->
+            <section class="settings-card">
+
+                <h3>Locatie en afstand</h3>
+
+                <p class="description">
+                    Zoek mensen bij jou in de buurt.
+                </p>
+
+                <label for="location">Jouw locatie</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    placeholder="Bijvoorbeeld Amersfoort"
+                    required
+                >
+
+                <label for="distance">Maximale afstand</label>
+
+                <select id="distance" name="distance">
+
+                    <option value="5">5 kilometer</option>
+                    <option value="10" selected>10 kilometer</option>
+                    <option value="25">25 kilometer</option>
+                    <option value="50">50 kilometer</option>
+                    <option value="100">100 kilometer</option>
+
+                </select>
+
+            </section>
+
+            <button type="submit" class="save-button">
+                Voorkeuren opslaan
+            </button>
+
+        </form>
+
+        <p id="saveMessage"></p>
+
+    </main>
+
+    <script src="instellingen.js"></script>
+
+</body>
+
+</html>
